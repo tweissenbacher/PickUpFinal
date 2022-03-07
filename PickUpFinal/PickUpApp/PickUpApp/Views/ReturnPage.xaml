@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:PickUpApp.ViewModels"
+             xmlns:model="clr-namespace:PickUpApp.Models" 
+             x:DataType="viewmodels:ReturnViewModel"
+             x:Class="PickUpApp.Views.ReturnPage">
+    <StackLayout Margin="0,0,0,0">
+        <Label Text="Anzahl der Behälter zum retounieren eingeben:" HorizontalTextAlignment="Center" TextColor="White" FontSize="22"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label Text="Small:" FontSize="20" VerticalOptions="Center"/>
+            <Entry x:Name="smallBox" Keyboard="Numeric" Text="0"></Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Medium:" FontSize="20" VerticalOptions="Center"/>
+            <Entry x:Name="mediumBox" Keyboard="Numeric" Text="0"></Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Large:" FontSize="20" VerticalOptions="Center"/>
+            <Entry x:Name="largeBox" Keyboard="Numeric" Text="0"></Entry>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Zur Station bringen ladet in Google Maps die nächst gelegene Paketstation, in der deine Behälter Platz haben"></Label>
+            <Label Text="Abholen lassen zeigt dir deine Bestellungen an, welche am Weg zu dir sind."></Label>
+            <Label Text="Melde dich für eine Bestellung an, um den Lieferanten deine Behälter zurückzugeben"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Zur Station bringen" Clicked="OnStationClicked"/>
+            <Button Text="Abholen lassen" Clicked="OnDeliveryClicked"/>
+        </StackLayout>
+
+        <Grid x:Name="Grid1" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="Route zur nähesten Station wird in Google Maps geladen"/>
+            </Grid>
+            <Grid Grid.Row="1" HeightRequest="100" WidthRequest="375" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                <Button Text="Für Retounierung an nähester Station anmelden"/>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="Grid2" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <RefreshView x:DataType="viewmodels:ReturnViewModel" Command="{Binding LoadDeliveriesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ItemsListView"
+                            ItemsSource="{Binding Deliveries}"
+                            SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:Delivery">
+                                <Button Text="{Binding Id}"
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        Clicked="OnItemDetailPageClicked"
+                                        BackgroundColor="LightSteelBlue"     
+                                        FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding EstimatedDelivery}" 
+                                        LineBreakMode="NoWrap"    
+                                        Style="{DynamicResource ListItemDetailTextStyle}"     
+                                        FontSize="14"/>
+                                <Label Text="{Binding Status}" 
+                                        LineBreakMode="NoWrap" 
+                                        Style="{DynamicResource ListItemDetailTextStyle}"    
+                                        FontSize="14" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.pickupapp">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+	<application android:label="PickUpApp.Android" android:theme="@style/MainTheme">
+		<activity android:name="microsoft.identity.client.BrowserTabActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="msal1d77a1d9-8399-406d-aebb-26b0440af720" android:host="auth" />
+			</intent-filter>
+		</activity>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.SENDTO" />
+			<data android:scheme="mailto" />
+		</intent>
+	</queries>
+</manifest>

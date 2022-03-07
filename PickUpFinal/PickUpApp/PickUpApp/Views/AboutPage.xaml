@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="PickUpApp.Views.AboutPage"
+             Title=    "Startseite"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Du befindest dich nun auf der Startseite" FontSize="Medium" />
+            <StackLayout Orientation="Vertical">
+                <Button Text="Bestellübersicht" Clicked="OnItemsButtonClicked" Command="{Binding CancelCommand}" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Meine Sendungen" Clicked="OnSenderButtonClicked" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Sendungsverfolgung" Clicked="OnNewItemPageClicked" Command="{Binding SaveCommand}" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Neue Bestellung aufgeben" Clicked="OnNewDeliveryClicked" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Hilfe" Clicked="OnHelpClicked" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Behälter retounieren" Clicked="OnReturnButtonClicked" BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

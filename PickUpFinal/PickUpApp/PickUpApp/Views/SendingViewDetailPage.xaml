@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:PickUpApp.ViewModels" x:DataType="viewmodels:SendingDetailViewModel"
+             x:Class="PickUpApp.Views.SendingViewDetailPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             Title=      "Detail">
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="ID:" FontSize="Medium" FontAttributes="Bold"/>
+        <Label Text="{Binding ItemId}" FontSize="Small"/>
+        <Label Text="Empfänger:" FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding Receiver}" FontSize="Small"/>
+        <Label Text="Status:" FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding Status}" FontSize="Small"/>
+        <Label Text="Voraussichtliches Lieferdatum:" FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding EstimatedDelivery}" FontSize="Small"/>
+        <Label Text="Größe:" FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding Size}" FontSize="Small"/>
+        <zxing:ZXingBarcodeImageView BarcodeValue="Box wird geöffnet" WidthRequest="300" HeightRequest="300">
+            <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                <zxingcommon:EncodingOptions Height="300" Width="300"/>
+            </zxing:ZXingBarcodeImageView.BarcodeOptions>
+        </zxing:ZXingBarcodeImageView>
+    </StackLayout>
+
+</ContentPage>

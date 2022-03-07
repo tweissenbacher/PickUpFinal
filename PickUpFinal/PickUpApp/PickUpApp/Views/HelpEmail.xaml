@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PickUpApp.Views.HelpEmail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Vielen Dank für Ihre Rückmeldung!"
+                FontSize="Title"
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Wir werden uns so schnell als möglich bei Ihnen melden und entschuldigen die Umstände vielmals" HorizontalOptions="CenterAndExpand" FontSize="Body"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

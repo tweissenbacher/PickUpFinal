@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:PickUpApp.ViewModels"
+             x:DataType="viewmodels:ItemDetailViewModel"
+             x:Class="PickUpApp.Views.ReturnDetailPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="ID:" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding ItemId}" FontSize="Small"/>
+            <Label Text="Absendername:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Sender}" FontSize="Small"/>
+            <Label Text="Voraussichtliches Lieferdatum:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding EstimatedDelivery}" FontSize="Small"/>
+            <Label Text="Größe:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Size}" FontSize="Small"/>
+            <Button Text="Für Abholung der Box vom Lieferanten am vorraussichtlichem Lieferdatum anmelden"
+                    Clicked="OnReturnBoxButtonClicked" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

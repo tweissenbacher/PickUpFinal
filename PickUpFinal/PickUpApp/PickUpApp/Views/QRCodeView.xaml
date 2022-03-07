@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:viewmodels="clr-namespace:PickUpApp.ViewModels" x:DataType="viewmodels:QRCodeViewModel"
+             x:Class="PickUpApp.Views.QRCodeView"
+             
+             
+    xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing.portable">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black" >
+
+            <Label Text="Bitte bei der Station scannen" FontSize="Title" HorizontalOptions="Center" TextColor="White" ></Label>
+            <Label Text="Die Sendung mit der Sendenummer:" FontSize="Title" HorizontalOptions="Center" TextColor="White" ></Label>
+            <Label Text="{Binding deliveryId }" FontSize="Title" TextColor="White" HorizontalOptions="Center" ></Label>
+            <zxing:ZXingBarcodeImageView BarcodeValue="{Binding deliveryId}" WidthRequest="400" HeightRequest="400" VerticalOptions="CenterAndExpand">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxingcommon:EncodingOptions Height="300" Width="300"/>
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+            <Button Text="HOME" Clicked="OnHomeClicked"  BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
