@@ -33,7 +33,7 @@ namespace PickUpApp.ViewModels
             try
             {
                 Deliveries.Clear();
-                var items = await DataStore.GetDeliveriesAsync();
+                var items = await DataStore.GetItemsAsync();
                 foreach (var item in items)
                 {
                     if(item.Status == Status.Versendet)
