@@ -80,6 +80,7 @@ namespace PickUpApp.Services
 
             return await Task.FromResult(true);
         }
+
         //Add existing item from Database
         /* public async Task<bool> AddItemByStringAsync(string id)
          {

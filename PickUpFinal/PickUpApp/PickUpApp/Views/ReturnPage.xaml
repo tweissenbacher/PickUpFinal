@@ -9,15 +9,15 @@
         <Label Text="Anzahl der Behälter zum retounieren eingeben:" HorizontalTextAlignment="Center" TextColor="White" FontSize="22"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Label Text="Small:" FontSize="20" VerticalOptions="Center"/>
-            <Entry x:Name="smallBox" Keyboard="Numeric" Text="0"></Entry>
+            <Entry x:Name="smallBox" WidthRequest="40" Keyboard="Numeric" Text="0"></Entry>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="Medium:" FontSize="20" VerticalOptions="Center"/>
-            <Entry x:Name="mediumBox" Keyboard="Numeric" Text="0"></Entry>
+            <Entry x:Name="mediumBox" WidthRequest="40" Keyboard="Numeric" Text=" 0"> </Entry>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="Large:" FontSize="20" VerticalOptions="Center"/>
-            <Entry x:Name="largeBox" Keyboard="Numeric" Text="0"></Entry>
+            <Entry x:Name="largeBox" WidthRequest="40" Keyboard="Numeric" Text="0"></Entry>
         </StackLayout>
         <StackLayout>
             <Label Text="Zur Station bringen ladet in Google Maps die nächst gelegene Paketstation, in der deine Behälter Platz haben"></Label>
