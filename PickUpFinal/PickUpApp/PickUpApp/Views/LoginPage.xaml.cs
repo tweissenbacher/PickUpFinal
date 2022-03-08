@@ -17,13 +17,12 @@ namespace PickUpApp.Views
         {
             InitializeComponent();
         }
-        // Behavior "asyn"
+        // Benutzerauthentifizierung
         protected override async void OnAppearing()
         {
-            await Navigation.PushAsync(new AboutPage());
             try
             {
-                // Look for existing account
+                // Nahc bestehenden Account suchen
                 IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
 
                 if (accounts.Count() >= 1)
@@ -37,18 +36,18 @@ namespace PickUpApp.Views
             }
             catch
             {
-                // Do nothing - the user isn't logged in
+                // Kein Vorgang - User ist noch nicht eingeloggt
             }
             base.OnAppearing();
         }
 
+        // Funktionalität des Login Buttons
         async void OnSignInClicked(object sender, EventArgs e)
         {
-
             AuthenticationResult result;
-
             try
             {
+                // Bei erfolgreicher Authentifizierung wird der User eingeloggt und die AboutPage angezeigt
                 result = await App.AuthenticationClient
                     .AcquireTokenInteractive(Constants.Scopes)
                     .WithPrompt(Prompt.ForceLogin)
@@ -57,7 +56,7 @@ namespace PickUpApp.Views
 
                 await Navigation.PushAsync(new AboutPage(result));
             }
-            catch (MsalClientException ex)
+            catch (MsalClientException)
             {
 
             }

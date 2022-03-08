@@ -5,30 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="PickUpApp.Views.LoginPage"
+             Title= "PickUpApp Login" 
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="PaketBackground2.PNG">
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
             <BoxView HeightRequest="10"/>
-            <Entry x:Name="Email" Placeholder="Email"   
-                           PlaceholderColor="Black"  HeightRequest="40"   
-                           Keyboard="Email"  
-                           TextColor="White"/>
-            <Entry x:Name="Password" Placeholder="Password" PlaceholderColor="Black" HeightRequest="40"   
-                           IsPassword="True"  
-                           TextColor="White"/>
-            <Button x:Name="LoginBtn" Text="Login" TextColor="White"  
-                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" BackgroundColor="Green" 
+            <Button x:Name="LoginBtn" Text="Sign in" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Green" 
                     BorderColor="Green" BorderWidth="1.5" CornerRadius="50" Clicked="OnSignInClicked"/>
-            <Label HorizontalOptions="Center">
-                <Label.FormattedText>
-                    <FormattedString>
-                    <Span Text="Don't have an account? " TextColor="Gray"/>
-                    <Span Text="Register" TextColor="Gray" FontAttributes="Bold" TextDecorations="Underline"/>
-                    </FormattedString>
-                </Label.FormattedText>            
-            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>  
