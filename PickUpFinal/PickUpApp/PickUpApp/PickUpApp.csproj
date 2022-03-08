@@ -20,6 +20,7 @@
     <PackageReference Include="FSharp.Core" Version="6.0.3" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.41.0" />
     <PackageReference Include="QRCoder" Version="1.4.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
@@ -30,9 +31,6 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\HelpEmail.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\LoginResultPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NewDeliveryPage.xaml">
