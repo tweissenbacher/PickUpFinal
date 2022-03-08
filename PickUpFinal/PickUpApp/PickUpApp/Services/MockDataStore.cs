@@ -9,7 +9,7 @@ namespace PickUpApp.Services
     public class MockDataStore : IDataStore<Delivery>
     {
         List<Delivery> items;
-        List<Delivery> sendings;
+
         // List<Delivery> selectedItems;
         List<Station> stations;
 
@@ -71,7 +71,7 @@ namespace PickUpApp.Services
 
         public async Task<bool> AddItemAsync(Delivery item)
         {
-            sendings.Add(item);
+            items.Add(item);
 
             return await Task.FromResult(true);
         }
@@ -95,11 +95,7 @@ namespace PickUpApp.Services
         {
             return await Task.FromResult(items);
         }
-        public async Task<IEnumerable<Delivery>> getSendingsAsync()
-        {
-            return await Task.FromResult(sendings);
-        }
-
+    
 
         /* public async Task<IEnumerable<Delivery>> GetItemsSelectedAsync()
          {
@@ -131,7 +127,7 @@ namespace PickUpApp.Services
         
             public async Task<Delivery> GetDeliveryAsync(string id)
         {
-            return await Task.FromResult(sendings.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<Delivery>> GetItemsAsync(bool forceRefresh = false)
