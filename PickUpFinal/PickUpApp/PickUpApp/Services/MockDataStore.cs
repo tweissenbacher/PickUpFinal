@@ -9,10 +9,9 @@ namespace PickUpApp.Services
     public class MockDataStore : IDataStore<Delivery>
     {
         List<Delivery> items;
-
         // List<Delivery> selectedItems;
         List<Station> stations;
-
+        List<Delivery> sendings;
 
 
 
@@ -37,7 +36,13 @@ namespace PickUpApp.Services
                              "Receiver5",
                              "3.0", Size.Klein,  Status.Versendet, new Xamarin.Essentials.Location(), new DateTime(2022, 9, 3, 12, 0, 0, 0))
 
-          
+            };
+            sendings = new List<Delivery>()
+            {
+
+                new Delivery("103647785543", new Person("test", "a.b@abc.com", 321),
+                             "receiver",
+                             "3.0", Size.Groß,  Status.auftretende_Probleme, new Xamarin.Essentials.Location(), DateTime.Now) };
             /*
             new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
             new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
@@ -45,11 +50,11 @@ namespace PickUpApp.Services
             new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
             new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
             new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }*/
-        };
 
-          /*  selectedItems = new List<Delivery>();
-            AddItemByStringAsync("103647785543");
-            AddItemByStringAsync("245632876433");*/
+
+            /*  selectedItems = new List<Delivery>();
+              AddItemByStringAsync("103647785543");
+              AddItemByStringAsync("245632876433");*/
 
             stations = new List<Station>()
             {
@@ -71,31 +76,31 @@ namespace PickUpApp.Services
 
         public async Task<bool> AddItemAsync(Delivery item)
         {
-            items.Add(item);
+            sendings.Add(item);
 
             return await Task.FromResult(true);
         }
         //Add existing item from Database
-       /* public async Task<bool> AddItemByStringAsync(string id)
-        {
-            foreach (Delivery item in items)
-            {
-                if (item.Id == id)
-                {
-                    selectedItems.Add(item);
-                }
-            }
+        /* public async Task<bool> AddItemByStringAsync(string id)
+         {
+             foreach (Delivery item in items)
+             {
+                 if (item.Id == id)
+                 {
+                     selectedItems.Add(item);
+                 }
+             }
 
-      
-            return await Task.FromResult(true);
-        }*/
+
+             return await Task.FromResult(true);
+         }*/
 
         //for returnBox
         public async Task<IEnumerable<Delivery>> GetDeliveriesAsync()
         {
             return await Task.FromResult(items);
         }
-    
+
 
         /* public async Task<IEnumerable<Delivery>> GetItemsSelectedAsync()
          {
@@ -124,15 +129,19 @@ namespace PickUpApp.Services
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
-        
-            public async Task<Delivery> GetDeliveryAsync(string id)
+
+        public async Task<Delivery> GetSendingAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(sendings.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<Delivery>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+        }
+        public async Task<IEnumerable<Delivery>> GetSendingsAsync(bool forceRefresh = false)
+        {
+            return await Task.FromResult(sendings);
         }
     }
 }

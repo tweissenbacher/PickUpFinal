@@ -56,7 +56,7 @@ namespace PickUpApp.ViewModels
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
+                var item = await DataStore.GetSendingAsync(itemId);
                 ItemId = item.Id;
                 Receiver = item.Receiver;
                 Status = item.Status.ToString();

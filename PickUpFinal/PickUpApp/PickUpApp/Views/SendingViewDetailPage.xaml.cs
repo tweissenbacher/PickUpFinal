@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client;
+﻿
+using Microsoft.Identity.Client;
 using PickUpApp.ViewModels;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -10,7 +11,7 @@ namespace PickUpApp.Views
         public SendingViewDetailPage(string id)
         {
             InitializeComponent();
-            BindingContext = new SendingViewDetailPage(id);
+            BindingContext = new SendingDetailViewModel(id);
         }
 
     }

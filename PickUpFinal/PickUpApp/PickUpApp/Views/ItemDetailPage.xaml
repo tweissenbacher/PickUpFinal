@@ -17,7 +17,7 @@
         <Label Text="{Binding EstimatedDelivery}" FontSize="Small"/>
         <Label Text="Größe:" FontSize="Medium" FontAttributes="Bold" />
         <Label Text="{Binding Size}" FontSize="Small"/>
-        <zxing:ZXingBarcodeImageView BarcodeValue="Box wird geöffnet" WidthRequest="300" HeightRequest="300">
+        <zxing:ZXingBarcodeImageView BarcodeValue="{Binding ItemId}" WidthRequest="300" HeightRequest="300">
             <zxing:ZXingBarcodeImageView.BarcodeOptions>
                 <zxingcommon:EncodingOptions Height="300" Width="300"/>
             </zxing:ZXingBarcodeImageView.BarcodeOptions>
