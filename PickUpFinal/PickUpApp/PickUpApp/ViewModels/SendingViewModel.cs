@@ -36,7 +36,7 @@ namespace PickUpApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync();
+                var items = await DataStore.GetSendingsAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);
