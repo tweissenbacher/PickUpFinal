@@ -16,3 +16,5 @@ namespace PickUpApp.ViewModels
         public ICommand OpenWebCommand { get; }
     }
 }
+
+//hi

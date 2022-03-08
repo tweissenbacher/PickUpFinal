@@ -71,7 +71,7 @@ namespace PickUpApp.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(TrackAndTracePage));
         }
 
         async void OnItemSelected(Delivery item)

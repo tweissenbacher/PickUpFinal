@@ -8,13 +8,13 @@ using Xamarin.Forms.Xaml;
 
 namespace PickUpApp.Views
 {
-    public partial class NewItemPage : ContentPage
+    public partial class TrackAndTracePage : ContentPage
     {
-        NewItemViewModel _viewModel;
-        public NewItemPage(ItemsViewModel itemsViewModel)
+        TrackAndTraceViewModel _viewModel;
+        public TrackAndTracePage(ItemsViewModel itemsViewModel)
         {
             InitializeComponent();
-            BindingContext = _viewModel = new NewItemViewModel(itemsViewModel);
+            BindingContext = _viewModel = new TrackAndTraceViewModel(itemsViewModel);
         }
 
         private void Button_Clicked(object sender, EventArgs e)

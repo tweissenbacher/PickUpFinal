@@ -69,26 +69,20 @@ namespace PickUpApp.Services
             return items;
         }
 
+
+        public List<Delivery> GetSendings()
+        {
+            return sendings;
+        }
+
+
         public async Task<bool> AddItemAsync(Delivery item)
         {
             sendings.Add(item);
 
             return await Task.FromResult(true);
         }
-        //Add existing item from Database
-       /* public async Task<bool> AddItemByStringAsync(string id)
-        {
-            foreach (Delivery item in items)
-            {
-                if (item.Id == id)
-                {
-                    selectedItems.Add(item);
-                }
-            }
 
-      
-            return await Task.FromResult(true);
-        }*/
 
         //for returnBox
         public async Task<IEnumerable<Delivery>> GetDeliveriesAsync()
@@ -101,10 +95,7 @@ namespace PickUpApp.Services
         }
 
 
-        /* public async Task<IEnumerable<Delivery>> GetItemsSelectedAsync()
-         {
-             return await Task.FromResult(selectedItems);
-         }*/
+     
 
 
         public async Task<bool> UpdateItemAsync(Delivery item)

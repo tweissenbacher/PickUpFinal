@@ -38,7 +38,7 @@ namespace PickUpApp.Views
         }
         private async void OnNewItemPageClicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new NewItemPage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
+           await Navigation.PushAsync(new TrackAndTracePage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
         }
 
     }

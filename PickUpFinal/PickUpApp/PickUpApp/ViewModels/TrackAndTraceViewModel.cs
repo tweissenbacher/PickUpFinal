@@ -7,12 +7,12 @@ using Xamarin.Forms;
 
 namespace PickUpApp.ViewModels
 {
-    public class NewItemViewModel : BaseViewModel
+    public class TrackAndTraceViewModel : BaseViewModel
     {
         private string text;
         private ItemsViewModel ItemsViewModel { get; set; }
 
-        public NewItemViewModel(ItemsViewModel itemsViewModel)
+        public TrackAndTraceViewModel(ItemsViewModel itemsViewModel)
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
