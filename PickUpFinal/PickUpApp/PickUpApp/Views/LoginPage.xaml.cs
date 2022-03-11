@@ -22,7 +22,7 @@ namespace PickUpApp.Views
         {
             try
             {
-                // Nahc bestehenden Account suchen
+                // Nach bestehenden Account suchen
                 IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
 
                 if (accounts.Count() >= 1)

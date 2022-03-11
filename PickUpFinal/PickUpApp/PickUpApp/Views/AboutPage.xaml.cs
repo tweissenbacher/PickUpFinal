@@ -23,7 +23,7 @@ namespace PickUpApp.Views
         public AboutPage(AuthenticationResult authResult)
         {
             authenticationResult = authResult;
-            //var name = authenticationResult.Account.Username;
+            var name = authenticationResult.Account.Username;
             InitializeComponent();
 
         }
@@ -33,11 +33,10 @@ namespace PickUpApp.Views
       
             base.OnAppearing();
         }
-
         // Button_Clickevent, um sich manuell von der Applikation auszuloggen
-        async void SignOutBtn_Clicked(System.Object sender, System.EventArgs e)
+        private async void SignOutBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            await App.AuthenticationClient.RemoveAsync(authenticationResult.Account);
+            //await App.AuthenticationClient.RemoveAsync(authenticationResult.Account);
             await Navigation.PushAsync(new LoginPage());
         }
 
