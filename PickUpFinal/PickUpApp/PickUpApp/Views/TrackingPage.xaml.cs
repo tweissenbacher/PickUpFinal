@@ -8,27 +8,28 @@ using Xamarin.Forms.Xaml;
 
 namespace PickUpApp.Views
 {
-    public partial class NewItemPage : ContentPage
+    public partial class TrackingPage : ContentPage
     {
-        NewItemViewModel _viewModel;
-        public NewItemPage(ItemsViewModel itemsViewModel)
+        TrackingViewModel _viewModel;
+        public TrackingPage(OrdersViewModel itemsViewModel)
         {
             InitializeComponent();
-            BindingContext = _viewModel = new NewItemViewModel(itemsViewModel);
+            BindingContext = _viewModel = new TrackingViewModel(itemsViewModel);
         }
 
+        // goes back to main menu
         private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.RemovePage(this);
         }
 
+        // takes the unique ID of a Delivery and shows the Detail of it
         private async void OnItemDetailPageClicked(object sender, EventArgs args)
         {
-            //string button = ((Button)sender).Text; // the Text of Button is the ItemId
             Delivery tmp = await _viewModel.DataStore.GetItemAsync(_viewModel.Text);
             if (tmp != null)
             {
-                await Navigation.PushAsync(new ItemDetailPage(_viewModel.Text)); // it is given to the DetailPage
+                await Navigation.PushAsync(new OrdersDetailPage(_viewModel.Text)); // it is given to the DetailPage
             }
            
         }

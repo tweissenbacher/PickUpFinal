@@ -11,9 +11,9 @@ namespace PickUpApp
         public AppShell(LoginPage loginPage)
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemsPage), typeof(ItemsPage));
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(OrdersPage), typeof(OrdersPage));
+            Routing.RegisterRoute(nameof(OrdersDetailPage), typeof(OrdersDetailPage));
+            Routing.RegisterRoute(nameof(TrackingPage), typeof(TrackingPage));
         }
 
     }

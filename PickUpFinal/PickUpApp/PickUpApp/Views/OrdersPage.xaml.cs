@@ -13,15 +13,15 @@ using Xamarin.Forms.Xaml;
 
 namespace PickUpApp.Views
 {
-    public partial class ItemsPage : ContentPage
+    public partial class OrdersPage : ContentPage
     {
-        ItemsViewModel _viewModel;
+        OrdersViewModel _viewModel;
 
-        public ItemsPage()
+        public OrdersPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new OrdersViewModel();
         }
 
 
@@ -31,14 +31,15 @@ namespace PickUpApp.Views
             _viewModel.OnAppearing();
         }
         
+        // Navigates to the OrdersDetailPage
         private async void OnItemDetailPageClicked(object sender, EventArgs args)
         {
             string button = ((Button)sender).Text; // the Text of Button is the ItemId
-            await Navigation.PushAsync(new ItemDetailPage(button)); // it is given to the DetailPage
+            await Navigation.PushAsync(new OrdersDetailPage(button)); // it is given to the DetailPage
         }
         private async void OnNewItemPageClicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new NewItemPage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
+           await Navigation.PushAsync(new TrackingPage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
         }
 
     }

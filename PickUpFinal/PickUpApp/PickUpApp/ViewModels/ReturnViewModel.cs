@@ -59,7 +59,7 @@ namespace PickUpApp.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={delivery.Id}");
+            await Shell.Current.GoToAsync($"{nameof(OrdersDetailPage)}?{nameof(OrdersDetailViewModel.ItemId)}={delivery.Id}");
         }
     }
 }

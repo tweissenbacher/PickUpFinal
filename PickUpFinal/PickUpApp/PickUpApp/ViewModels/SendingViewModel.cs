@@ -71,7 +71,7 @@ namespace PickUpApp.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(TrackingPage));
         }
 
         async void OnItemSelected(Delivery item)
@@ -80,7 +80,7 @@ namespace PickUpApp.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(SendingViewDetailPage)}?{nameof(SendingDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(SendingsDetailPage)}?{nameof(SendingDetailViewModel.ItemId)}={item.Id}");
         }
     }
 }

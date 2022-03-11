@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PickUpApp.Views.SendingView"
-             Title=    "Deine Sendungen"
+             x:Class="PickUpApp.Views.OrdersPage"
+             Title=    "Deine Bestellungen"
              xmlns:local="clr-namespace:PickUpApp.ViewModels"  
              xmlns:model="clr-namespace:PickUpApp.Models"  
              x:Name="BrowseItemsPage">
@@ -14,7 +14,7 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:SendingViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+    <RefreshView x:DataType="local:OrdersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 SelectionMode="None">
@@ -23,10 +23,10 @@
                     <StackLayout Padding="10" x:DataType="model:Delivery">
                         <Button Text="{Binding Id}"
                             Style="{DynamicResource ListItemTextStyle}" 
-                            Clicked="OnSendingDetailClicked"
+                            Clicked="OnItemDetailPageClicked"
                             BackgroundColor="LightSteelBlue"     
                             FontSize="18" FontAttributes="Bold"/>
-                        <Label Text="{Binding Receiver}" 
+                        <Label Text="{Binding Sender.Name}" 
                             LineBreakMode="NoWrap"    
                             Style="{DynamicResource ListItemTextStyle}"     
                             FontSize="14"/>
@@ -34,7 +34,7 @@
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemDetailTextStyle}"    
                             FontSize="14" />
-                        <!-- <StackLayout.GestureRecognizers>
+                       <!-- <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		

@@ -17,7 +17,7 @@ namespace PickUpApp.Views
         }
 
         private AuthenticationResult authenticationResult;
-        private ItemsViewModel _viewModel;
+        private OrdersViewModel _viewModel;
 
         //Konstruktor für die Authentifizierung
         public AboutPage(AuthenticationResult authResult)
@@ -30,26 +30,8 @@ namespace PickUpApp.Views
 
         protected override void OnAppearing()
         {
-            GetClaims();
+      
             base.OnAppearing();
-        }
-        // Ist der Token gültig, können Benutzerinformationen abgerufen werden
-        private void GetClaims()
-        {
-            var token = authenticationResult.IdToken;
-            if (token != null)
-            {
-                var handler = new JwtSecurityTokenHandler();
-                var data = handler.ReadJwtToken(authenticationResult.IdToken);
-                var claims = data.Claims.ToList();
-                if (data != null)
-                {
-                    // In diesem Abschnitt können noch weitere Benutzerinformationen abgebildet werden -Beispiel $Issuer, &Email uvm.
-                    this.welcome.Text = $"Guten Tag {data.Claims.FirstOrDefault(X => X.Type.Equals("name")).Value} !";
-                    //this.issuer.Text = $"Issuer: {data.Claims.FirstOrDefault(x => x.Type.Equals("iss")).Value}";
-
-                }
-            }
         }
 
         // Button_Clickevent, um sich manuell von der Applikation auszuloggen
@@ -66,12 +48,12 @@ namespace PickUpApp.Views
 
         private void OnItemsButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ItemsPage());
+            Navigation.PushAsync(new OrdersPage());
         }
 
         private async void OnNewItemPageClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewItemPage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
+            await Navigation.PushAsync(new TrackingPage(_viewModel)); // viewModel handed over to make the access possible to the ItemList
         }
         private async void OnHelpClicked(object sender, EventArgs e)
         {
@@ -84,7 +66,7 @@ namespace PickUpApp.Views
         
             private async void OnSenderButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SendingView()); // viewModel handed over to make the access possible to the ItemList
+            await Navigation.PushAsync(new SendingsPage()); // viewModel handed over to make the access possible to the ItemList
         }
 
     }

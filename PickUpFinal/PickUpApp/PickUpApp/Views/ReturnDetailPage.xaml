@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:PickUpApp.ViewModels"
-             x:DataType="viewmodels:ItemDetailViewModel"
+             x:DataType="viewmodels:OrdersDetailViewModel"
              x:Class="PickUpApp.Views.ReturnDetailPage">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">

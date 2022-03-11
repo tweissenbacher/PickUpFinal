@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PickUpApp.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class OrdersViewModel : BaseViewModel
     {
         private Delivery _selectedItem;
 
@@ -17,7 +17,7 @@ namespace PickUpApp.ViewModels
         public Command AddItemCommand { get; }
         public Command<Delivery> ItemTapped { get; }
 
-        public ItemsViewModel()
+        public OrdersViewModel()
         {
             Title = "Browse";
             Items = new ObservableCollection<Delivery>();
@@ -71,7 +71,7 @@ namespace PickUpApp.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(TrackingPage));
         }
 
         async void OnItemSelected(Delivery item)
@@ -80,7 +80,7 @@ namespace PickUpApp.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(OrdersDetailPage)}?{nameof(OrdersDetailViewModel.ItemId)}={item.Id}");
         }
     }
 }

@@ -13,11 +13,11 @@ using Xamarin.Forms.Xaml;
 
 namespace PickUpApp.Views
 {
-    public partial class SendingView : ContentPage
+    public partial class SendingsPage : ContentPage
     {
         SendingViewModel _viewModel;
 
-        public SendingView()
+        public SendingsPage()
         {
             InitializeComponent();
 
@@ -34,7 +34,7 @@ namespace PickUpApp.Views
         private async void OnSendingDetailClicked(object sender, EventArgs args)
         {
             string button = ((Button)sender).Text; // the Text of Button is the ItemId
-            await Navigation.PushAsync(new SendingViewDetailPage(button)); // it is given to the DetailPage
+            await Navigation.PushAsync(new SendingsDetailPage(button)); // it is given to the DetailPage
         }
 
 

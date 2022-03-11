@@ -16,7 +16,7 @@ namespace PickUpApp.Views
         public ReturnDetailPage(string id)
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel(id);
+            BindingContext = new OrdersDetailViewModel(id);
         }
         private async void OnReturnBoxButtonClicked(object sender, EventArgs args)
         {

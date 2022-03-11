@@ -30,6 +30,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\OrdersDetailPage.xaml.cs">
+      <DependentUpon>OrdersDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OrdersPage.xaml.cs">
+      <DependentUpon>OrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SendingsPage.xaml.cs">
+      <DependentUpon>SendingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SendingsDetailPage.xaml.cs">
+      <DependentUpon>SendingsDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TrackingPage.xaml.cs">
+      <DependentUpon>TrackingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\HelpEmail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -45,10 +63,10 @@
     <EmbeddedResource Update="Views\ReturnPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SendingView.xaml">
+    <EmbeddedResource Update="Views\SendingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SendingViewDetailPage.xaml">
+    <EmbeddedResource Update="Views\SendingsDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

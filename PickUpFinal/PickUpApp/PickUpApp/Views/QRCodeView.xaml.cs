@@ -20,9 +20,9 @@ namespace PickUpApp.Views
             BindingContext = new QRCodeViewModel(id);
 
         }
-        private void OnHomeClicked(object sender, EventArgs e)
+        private async void OnHomeClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AboutPage());
+            await Navigation.PushAsync(new AboutPage());
         }
 
 

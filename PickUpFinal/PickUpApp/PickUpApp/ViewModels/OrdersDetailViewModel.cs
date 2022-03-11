@@ -8,9 +8,9 @@ using Size = PickUpApp.Models.Size;
 namespace PickUpApp.ViewModels
 {
     //[QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public class ItemDetailViewModel : BaseViewModel
+    public class OrdersDetailViewModel : BaseViewModel
     {
-        public ItemDetailViewModel(string id)
+        public OrdersDetailViewModel(string id)
         {
             LoadItemId(id);
         }

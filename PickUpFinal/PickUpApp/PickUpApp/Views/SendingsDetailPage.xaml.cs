@@ -6,9 +6,9 @@ using Xamarin.Forms;
 
 namespace PickUpApp.Views
 {
-    public partial class SendingViewDetailPage : ContentPage
+    public partial class SendingsDetailPage : ContentPage
     {
-        public SendingViewDetailPage(string id)
+        public SendingsDetailPage(string id)
         {
             InitializeComponent();
             BindingContext = new SendingDetailViewModel(id);

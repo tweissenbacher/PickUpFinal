@@ -19,7 +19,7 @@
                 </zxing:ZXingBarcodeImageView.BarcodeOptions>
             </zxing:ZXingBarcodeImageView>
 
-            <Button Text="HOME" Clicked="OnHomeClicked"  BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"></Button>
+           <!-- <Button Text="HOME" Clicked="OnHomeClicked"  BackgroundColor="LightSteelBlue" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"></Button> /-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
